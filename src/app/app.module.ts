@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { TitleService} from './services/title.service';
 import { TestConceptsComponent } from './Routed/TestConcepts/test-concepts/test-concepts.component';
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -33,7 +34,8 @@ export function InitApp()
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [
     {provide: 'titleService', useClass: TitleService},
