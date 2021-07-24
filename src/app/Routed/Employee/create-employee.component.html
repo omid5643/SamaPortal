@@ -1,0 +1,66 @@
+
+<div class="container">
+<form [formGroup]="employeeForm"  class="form-horizontal" (ngSubmit)="LogForm()" ngNativeValidate >
+  <div class="form-group" 
+  [ngClass]="{'has-error':employeeForm.get('fullName').errors
+   &&(employeeForm.get('fullName').touched||employeeForm.get('fullName').dirty) }">
+    <label for="fullName">FullName</label>
+    <input  class="form-control" id="fullName"  placeholder="Enter name" formControlName="fullName" >
+    <span class="help-block" *ngIf="employeeForm.get('fullName').errors
+    &&(employeeForm.get('fullName').touched||employeeForm.get('fullName').dirty)">
+    <span  *ngIf="employeeForm.get('fullName').errors.required">
+      Full name is required
+      </span>
+      <span  *ngIf="employeeForm.get('fullName').errors.minlength ||employeeForm.get('fullName').errors.maxlength">
+        full name needs to be between 2 and 10 characters
+        </span>
+        <span  *ngIf="employeeForm.get('fullName').errors.invalidname">
+          the entered value is not allowed in this field
+          </span>
+    </span>
+
+  </div>
+
+  <div *ngIf="employeeForm.get('fullName').value"   class="form-group" [ngClass]="{'has-error':employeeForm.get('email').errors}">
+    <label for="email">Email</label>
+    <input  class="form-control" id="email"  placeholder="Enter email" formControlName="email" >
+    
+  </div>
+  <div formGroupName="skills">
+      <div class="col-sm-4">
+    <input class="form-control"  placeholder="skillName" required   formControlName="skillName">
+    </div>
+    <div class="col-sm-4">
+    <input class="form-control"  placeholder="experinceInYears" formControlName="experinceInYears">
+  </div>
+    <div class="form-group">
+      <label class="radio-inline">profeciency</label>
+      <input type="radio" value="beginner"       formControlName="proficiency">beginner
+      <input type="radio"  value="intermediate"  formControlName="proficiency">intermediate
+      <input type="radio" value="advanced"       formControlName="proficiency">advanced
+    </div>
+
+</div>
+<div class="btn-toolbar">
+<button type="submit" class="btn btn-primary save-button " >Save</button>
+<button  class="btn btn-primary" (click)="onLoadDataClick()" >load</button>
+</div>
+</form>
+
+<br/>
+<ng-container *ngIf='employeeForm.value.fullName!=null && employeeForm.value.email!=null'>
+  <p>Form Values</p> {{employeeForm.value|json}}
+  <p>dirty</p> {{employeeForm.dirty}}
+
+
+</ng-container>
+
+</div>
+<h2>CSS positionig</h2>
+<div>
+  <p>static content</p>
+  <p class="relativeP">relative content</p>
+  <p class="fixedP">fixed content</p>
+  <p class="absoluteP">absolute content</p>
+  <p class="stickyP">sticky content</p>
+</div>

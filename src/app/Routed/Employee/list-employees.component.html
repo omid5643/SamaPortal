@@ -1,0 +1,52 @@
+
+{{pageTitle|ToLower}} <br/>
+{{appversion}} <br/>
+
+visitors count:{{count}}
+<ul>
+
+<li *ngFor="let employee of employees| slice:0:5; let i=index">{{ employee.FirtName}}{{i}}</li>
+
+</ul>
+
+<div>
+<p>add new employee</p>
+<form  [formGroup]='createForm'>
+
+<input type="text" placeholder="firstname" formControlName="fistName"><br/><br/>
+<input type="text" placeholder="lastname" formControlName="lastName">
+
+</form>
+
+</div>
+<br/>
+
+<div class="bannerNameDiv">
+<span>{{DfaultBannerName}}</span>
+<!-- acessing child component properties using template refrencr variable -->
+<span *ngIf="appBanner1">{{appBanner1.currentAdd}}</span> 
+
+
+<button    (click)="UpdateBanner()">update banner</button><br/>
+<button   (click)="callBannersMethods()">call child compoinets methods</button>
+</div>
+
+<app-banner  #appBanner1
+[currentAdd]="BannerAdds[currentAddIndex]"
+[currentCountry]="BannerCoutries[currentAddIndex]"
+[currentTime]="currentTime"
+(BannerName)="updateBannnerName($event)">
+</app-banner>
+
+<app-banner  #appBanner2
+[currentAdd]="BannerAdds[currentAddIndex]"
+[currentCountry]="BannerCoutries[currentAddIndex]"
+[currentTime]="currentTime"
+(BannerName)="updateBannnerName($event)">
+</app-banner>
+
+<!-- https://stackoverflow.com/questions/41672138/how-does-angular2-distinguishes-between-light-dom-or-shadow-dom-inside-component -->
+<app-step   *ngFor="let step of steps">
+  <p #stepParagraph>putting content as light dom</p>
+  
+</app-step>

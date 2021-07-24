@@ -1,0 +1,92 @@
+
+
+       <form  [formGroup] ="bmiForm"  (ngSubmit)="calculate()">
+         <div class="row" style="margin-left: 10px">
+            <div >
+               <input type="text" placeholder="height"  formControlName="height">
+            </div>
+            <div>
+               <input type="text" placeholder="weight" formControlName="weight">             
+             </div>
+            <div>
+               <input type="text" placeholder="bmi" formControlName="bmi"> 
+            </div>
+           <div>
+             <button  type="submit">calculate</button>
+           </div>
+
+         </div>
+       </form>
+
+       <div>
+
+        <h1>Header in a div</h1>
+        <p>paragraph with id first paragraph </p>
+        <p class="special">Special Paragraph </p>
+        <p class="superSpecial">Super Special Paragraph </p>
+        <p class="special superSpecial">
+          <span> Super Special and Special!</span><br/>
+          <span id="specialSpan"> Super Special and Special Span!</span>
+        
+        </p>
+       </div>
+
+       <div>
+          <span id="specialSpan"> Special Span</span>
+       </div>
+       <h1>header not in a div</h1>
+
+       <div class="parentdiv">
+
+       <h2>h2 dircet child of a div</h2>
+       <div>
+         <h2>H2 in a p, not dricet child of a div</h2>
+       </div>
+       </div>
+
+  <div  class="r-less-div">
+      
+    <p>Hi</p>
+    <p class="r-less-div-p">
+     hello
+    </p>    
+  </div>
+  <div> <span class="r-less-div-span"> USA</span></div>
+
+  <div class="serialdiv-p">
+    <p>
+      Mehrnoosh!
+    </p>
+   
+  </div>
+ 
+<div >
+  <table>
+    <th>first</th> <th>last</th>
+   <tr><td>a</td> <td>e</td></tr>
+   <tr><td>b</td> <td>f</td></tr>
+   <tr><td>c</td> <td>g</td></tr>
+   <tr><td>d</td> <td>h</td></tr>
+  </table>
+</div>
+<div >
+  <table   class="mytable">
+    <th>first</th> <th>last</th>
+    <tr ><td>a1</td> <td>e1</td></tr>
+    <tr ><td>b1</td> <td>f1</td></tr>
+    <tr ><td>c1</td> <td>g1</td></tr>
+    <tr ><td>d1</td> <td>h1</td></tr>
+   </table>
+  </div>
+
+
+  <div id="headerwithincrements">
+  <h1>Part1</h1>
+  <h2>section 1</h2>
+  <h2>section 2</h2>
+  <h1>Part2</h1>
+  <h2>section 1</h2>
+  <h2>section 2</h2>
+  <h1>Part3</h1>
+
+  </div>

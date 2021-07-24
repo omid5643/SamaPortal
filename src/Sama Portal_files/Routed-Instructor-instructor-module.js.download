@@ -1,0 +1,174 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["Routed-Instructor-instructor-module"],{
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/create-instructor.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/create-instructor.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"container\">\n<p style=\"color:red;font:x-large;\">\n    \n    create-instructor works!\n\n\n</p>\n\n</div>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/get-instructors.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/get-instructors.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\n    \n    table {\n        font-family: arial, sans-serif;\n        border-collapse: collapse;\n        width: 100%;\n      }\n      \n      td, th {\n        border: 1px solid #dddddd;\n        text-align: left;\n        padding: 8px;\n      }\n      \n      tr:nth-child(even) {\n        background-color: #dddddd;\n      }\n\n    <table>\n        <tr>\n          <th>InstructorsId</th>\n          <th>InstructorsName</th>\n          <th>InstructorsLastName</th>\n        </tr>\n        <tr>\n          <td>Alfreds Futterkiste</td>\n          <td>Maria Anders</td>\n          <td>Germany</td>\n        </tr>\n        <tr>\n          <td>Centro comercial Moctezuma</td>\n          <td>Francisco Chang</td>\n          <td>Mexico</td>\n        </tr>\n        <tr>\n          <td>Ernst Handel</td>\n          <td>Roland Mendel</td>\n          <td>Austria</td>\n        </tr>\n        <tr>\n          <td>Island Trading</td>\n          <td>Helen Bennett</td>\n          <td>UK</td>\n        </tr>\n        <tr>\n          <td>Laughing Bacchus Winecellars</td>\n          <td>Yoshi Tannamuri</td>\n          <td>Canada</td>\n        </tr>\n        <tr>\n          <td>Magazzini Alimentari Riuniti</td>\n          <td>Giovanni Rovelli</td>\n          <td>Italy</td>\n        </tr>\n      </table>\n\n</div>\n");
+
+/***/ }),
+
+/***/ "./src/app/Routed/Instructor/create-instructor.component.less":
+/*!********************************************************************!*\
+  !*** ./src/app/Routed/Instructor/create-instructor.component.less ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("div p {\n  color: rgb;\n  font-size: 14;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvUm91dGVkL0luc3RydWN0b3IvQzovUHJvamVjdHMvT21yYW5XZWJBcHAvc3JjL2FwcC9Sb3V0ZWQvSW5zdHJ1Y3Rvci9jcmVhdGUtaW5zdHJ1Y3Rvci5jb21wb25lbnQubGVzcyIsInNyYy9hcHAvUm91dGVkL0luc3RydWN0b3IvY3JlYXRlLWluc3RydWN0b3IuY29tcG9uZW50Lmxlc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxVQUFBO0VBQ0EsYUFBQTtBQ0NKIiwiZmlsZSI6InNyYy9hcHAvUm91dGVkL0luc3RydWN0b3IvY3JlYXRlLWluc3RydWN0b3IuY29tcG9uZW50Lmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyJkaXYgcHtcbiAgICBjb2xvcjpyZ2I7XG4gICAgZm9udC1zaXplOiAxNDtcblxufSIsImRpdiBwIHtcbiAgY29sb3I6IHJnYjtcbiAgZm9udC1zaXplOiAxNDtcbn1cbiJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/Routed/Instructor/create-instructor.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/Routed/Instructor/create-instructor.component.ts ***!
+  \******************************************************************/
+/*! exports provided: CreateInstructorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateInstructorComponent", function() { return CreateInstructorComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let CreateInstructorComponent = class CreateInstructorComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+CreateInstructorComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-create-instructor',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./create-instructor.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/create-instructor.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./create-instructor.component.less */ "./src/app/Routed/Instructor/create-instructor.component.less")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], CreateInstructorComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Routed/Instructor/get-instructors.component.less":
+/*!******************************************************************!*\
+  !*** ./src/app/Routed/Instructor/get-instructors.component.less ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL1JvdXRlZC9JbnN0cnVjdG9yL2dldC1pbnN0cnVjdG9ycy5jb21wb25lbnQubGVzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/Routed/Instructor/get-instructors.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/Routed/Instructor/get-instructors.component.ts ***!
+  \****************************************************************/
+/*! exports provided: GetInstructorsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetInstructorsComponent", function() { return GetInstructorsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+//import { Observable, throwError } from 'rxjs';
+let GetInstructorsComponent = class GetInstructorsComponent {
+    constructor(http) {
+        this.http = http;
+    }
+    ngOnInit() {
+        let getInstructorUrl = 'http://localhost:59019/api/Instructor/Load';
+        //TODO:add type and service
+        // this.http.get<Instructor[]>(getInstructorUrl).subscribe(data=>{})
+        this.http.get(getInstructorUrl).subscribe(data => { });
+    }
+};
+GetInstructorsComponent.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+GetInstructorsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-get-instructors',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./get-instructors.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/Routed/Instructor/get-instructors.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./get-instructors.component.less */ "./src/app/Routed/Instructor/get-instructors.component.less")).default]
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+], GetInstructorsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/Routed/Instructor/instructor.module.ts":
+/*!********************************************************!*\
+  !*** ./src/app/Routed/Instructor/instructor.module.ts ***!
+  \********************************************************/
+/*! exports provided: InstructorModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InstructorModule", function() { return InstructorModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _create_instructor_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./create-instructor.component */ "./src/app/Routed/Instructor/create-instructor.component.ts");
+/* harmony import */ var _get_instructors_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./get-instructors.component */ "./src/app/Routed/Instructor/get-instructors.component.ts");
+
+
+
+
+
+
+const routes = [
+    { path: '', component: _get_instructors_component__WEBPACK_IMPORTED_MODULE_5__["GetInstructorsComponent"] },
+    { path: 'CreateInstructor', component: _create_instructor_component__WEBPACK_IMPORTED_MODULE_4__["CreateInstructorComponent"] }
+];
+let InstructorModule = class InstructorModule {
+};
+InstructorModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_create_instructor_component__WEBPACK_IMPORTED_MODULE_4__["CreateInstructorComponent"], _get_instructors_component__WEBPACK_IMPORTED_MODULE_5__["GetInstructorsComponent"]],
+        imports: [
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"].forChild(routes)
+        ]
+    })
+], InstructorModule);
+
+
+
+/***/ })
+
+}]);
+//# sourceMappingURL=Routed-Instructor-instructor-module.js.map

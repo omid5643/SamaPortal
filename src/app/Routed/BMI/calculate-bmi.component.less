@@ -1,0 +1,192 @@
+
+
+
+// CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+// We can divide CSS selectors into five categories:
+
+// Simple selectors (select elements based on name, id, class)
+// Combinator selectors (select elements based on a specific relationship between them)
+// Pseudo-class selectors (select elements based on a certain state)  a:hover  <== like an event binding
+// Pseudo-elements selectors (select and style a part of an element)
+// Attribute selectors (select elements based on an attribute or attribute value)
+
+
+
+//less=> leaner style sheets, extension of css, makes it more modular, readable, reusable and maintainable
+//1 understand decendant children and combination with selectors
+//2 understand specificity using selectors
+//3 less varibales
+//4 less mixins
+//5 less nesting which mimics the structure of html
+
+
+//@import  "";  //<== we could use the import statement to import our rules
+
+
+div h1 {
+    color: chartreuse;
+
+}
+
+p {
+ color: cornflowerblue;
+ font-size: 14;
+}
+
+
+.orangeParagraph
+{
+color:@orangecolor;
+
+}
+
+div p //<== p is decendent of div more specific rule
+{
+    color:yellow;
+    font-size: 14;
+
+}
+
+// .special  <== this doesnt make the rule more specific
+// {
+// color:orange;
+
+// }
+
+@orangecolor:orange;  //declared variable
+
+
+// div p.special  //<== this makes the rule more specific
+// {
+// .orangeParagraph()
+
+// }
+div  // same as above just using nesting, The resulting code is more concise, and mimics the structure of your HTML.
+{
+    p.special
+  {
+    .orangeParagraph() //<== inhertance using mixing, inheriting css properties 
+
+  }
+
+}
+div p.superSpecial  //<== this makes the rule more specific
+{
+color:red;
+
+}
+
+div p.superSpecial.special  //<== this makes the rule more specific, the order doesnt matter
+{
+color:olive;
+font-size: 17px;
+
+}
+
+#specialSpan 
+{
+   color:blue; 
+}
+
+div p.superSpecial.special #specialSpan    //<==space means decentdent, no space means combination
+{
+   color:brown; 
+}
+
+.parentdiv > h2 //    > means direct child
+{
+
+    color:purple;
+}
+
+div + p { //<== + means adjacent (a jason t)  sibling
+    background-color: yellow;
+  }
+
+  
+div ~ p { //<== ~ means general sibling
+    background-color: yellow;
+  }
+
+
+  @rlessdiv:.r-less-div;
+  @serialdiv:.serialdiv;
+
+
+  @{rlessdiv}
+  {
+    background-color:red;
+    font-size: 28px;
+    &-p
+    {
+        background-color:blue ;
+    }
+    &-span          //<== this isnt nesting, its reusing the class prefix using '&' sign
+    {
+        background-color:greenyellow ;
+    }
+  }
+
+@{serialdiv}
+{background-color:lightcyan;
+
+  &-p
+  {
+    background-color: purple;
+
+  }
+
+}
+
+.tablecontainer
+{
+position: relative;
+
+}
+table
+{
+ position: relative;
+ left:100px;
+ margin-bottom: 20px;
+ width:200px;
+
+}
+table,tr,td,th
+{
+  border:solid;
+}
+
+
+
+.mytable tr:nth-child(even)
+{
+  background-color: yellow;
+ 
+ }
+
+
+ #headerwithincrements
+ {
+
+  counter-reset: heading;
+ }
+
+ #headerwithincrements h1
+ {
+   counter-reset: subheading;
+ }
+
+ #headerwithincrements h1::before
+ {
+   counter-increment:heading ;
+   content: ""counter(heading)")";
+
+ }
+
+ #headerwithincrements h2::before
+ {
+   counter-increment:subheading ;
+   content: ""counter(heading)"."counter(subheading)")";
+
+ }

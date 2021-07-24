@@ -1,0 +1,23 @@
+<div class="container">
+
+
+    <p>{{Title}}</p>
+    <p>{{MyCar.Model}}</p>
+   
+    <table class="listTable" >
+        <tr>
+         
+          <th>Instructor First Name</th>
+          <th>Instructor Last Name</th>
+          <th>Instructor Age</th>
+        </tr>
+        <tr *ngFor="let inst of Instructors">
+          <td>{{inst.firstName}}</td>
+          <td>{{inst.lastName}}</td>
+          <td>{{inst.age}}</td>
+        </tr>
+      
+      </table>
+   
+
+</div>

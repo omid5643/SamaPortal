@@ -1,0 +1,71 @@
+
+
+   <form  #calculatorForm="ngForm" (ngSubmit) =calculate(calculatorForm) >
+       <div>
+      <label for="firstNumber">firstNumber</label>  <input #firstNumberField="ngModel" [(ngModel)]="firstNumber" type="text" name="firstNumber" id="firstNumber"/><br/>
+      <label for="secondNumber">secondNumber</label>  <input  type="text" name="secondNumber" [(ngModel)]="secondNumber" id="secondNumber"/><br/>
+      <label for="email">Email</label>  <input required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" #emailField="ngModel"  type="text" name="email" [(ngModel)]="email" id="email"/><br/>
+      <div *ngIf="emailField.errors && emailField?.errors.required && emailField.touched ">
+  <span>email is required</span>
+      </div>
+      <div *ngIf="emailField.errors && emailField?.errors.pattern && emailField.touched  ">
+        <span>email is not in valid format</span>
+            </div>
+      <button>Calculate</button>
+    </div>
+
+    <div>
+        <select AppDropDownValidator='-9' name='department' id='department' class='employeeDrop firstDrop' [(ngModel)]='selectedDepartment' #departmentSelect="ngModel" >
+            <option value="-9" >please select...</option>
+            <option [ngValue]="department" *ngFor="let department of departments">{{department.name}}</option>
+           
+        </select>
+        <span *ngIf='departmentSelect.errors?.dropdownnotSelected'>
+            deparment is required!
+        </span>
+    </div>
+    <div ngModelGroup="passwordGroup" #passwordGroup="ngModelGroup" EqualityValidator="password,confirmpassword" >
+    <label for="password">password</label>  <input  #passwordField="ngModel" [(ngModel)]="password" type="text" name="password" id="password"/><br/>
+      <label >confirmpassword</label>  <input  #confirmpasswordField="ngModel" type="text" name="confirmpassword" [(ngModel)]="confirmpassword" /><br/> 
+    </div>
+    <span *ngIf='passwordGroup.errors?.notEqual'>
+       passwords dont match!
+    </span>
+
+   </form>
+
+
+   <table>
+       <th>control&nbsp; </th> 
+       <th>touched&nbsp; </th> 
+       <th>untouched&nbsp; </th>
+        <th>valid&nbsp; </th>
+        <th>invalid&nbsp; </th>
+        <th>dirty &nbsp;</th>
+        <th>pristine </th>
+       <tr>
+           <td>firstNum</td>
+           <td>{{firstNumberField.touched}}</td>
+           <td>{{firstNumberField.untouched}}</td>
+           <td>{{firstNumberField.valid}}</td>
+           <td>{{firstNumberField.invalid}}</td>
+           <td>{{firstNumberField.dirty}}</td>
+           <td>{{firstNumberField.pristine}}</td>
+        
+    </tr>
+       <tr>
+           <td>Form</td>
+           
+           <td>{{calculatorForm.touched}}</td>
+           <td>{{calculatorForm.untouched}}</td>
+           <td>{{calculatorForm.valid}}</td>
+           <td>{{calculatorForm.invalid}}</td>
+           <td>{{calculatorForm.dirty}}</td>
+           <td>{{calculatorForm.pristine}}</td>
+    
+    </tr>
+   </table>
+
+<ng-container  #bannerContainer>
+   
+</ng-container>
