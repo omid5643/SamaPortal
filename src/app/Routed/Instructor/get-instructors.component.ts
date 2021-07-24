@@ -1,6 +1,8 @@
 //ran ng update to migrate
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {NgbdModalContent} from '../../components/modal/modal-component'
 
 @Component({
   selector: 'app-get-instructors',
@@ -12,12 +14,13 @@ export class GetInstructorsComponent implements OnInit {
   Instructors:any;
   MyCar:Car;
 
-  constructor(private http: HttpClient)
+  constructor(private http: HttpClient, private modalService: NgbModal)
    { 
 
     this.Title="Instructor List Page";
     this.MyCar= new Car();
     this.MyCar.Model="BMW";
+   
    }
 
   ngOnInit() {
@@ -28,9 +31,22 @@ export class GetInstructorsComponent implements OnInit {
       {
 
         this.Instructors=data
+        this.openModal()
       })
+    
   }
 
+  openModal() {
+    const modalRef = this.modalService.open( NgbdModalContent,{injector: null});
+  
+   modalRef.componentInstance.name = 'World';
+
+
+  
+  
+  
+
+}
 }
 
 export class Car{
@@ -40,5 +56,6 @@ export class Car{
   
 
 }
+
 
 
