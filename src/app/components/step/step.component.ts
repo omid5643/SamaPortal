@@ -13,7 +13,7 @@ export class StepComponent implements OnInit, AfterContentInit  {
     this.stepName = 'not implemented';
   }
 
-  @ContentChild('stepParagraph', {static: false})
+  @ContentChild('stepParagraph')
   Paragraph: ElementRef;
 
    ngAfterContentInit(): void {
