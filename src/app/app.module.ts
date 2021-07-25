@@ -11,6 +11,7 @@ import { TitleService} from './services/title.service';
 import { TestConceptsComponent } from './Routed/TestConcepts/test-concepts/test-concepts.component';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BsModalComponent } from './components/bs-modal.component';
 
 
 
@@ -25,6 +26,7 @@ export function InitApp()
   declarations: [
     AppComponent,
     TestConceptsComponent,
+    BsModalComponent,
     
    
  
