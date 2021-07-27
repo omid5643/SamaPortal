@@ -18,17 +18,24 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li>
+          <a routerLinkActive='active' routerLink='instructorlist/CreateInstructor'>Add New Instructor</a>
+        </li>
+        <li>
+          <a routerLinkActive='active' routerLink='instructorlist'>View Instructors</a>
+        </li>
+        <li>
           <a routerLinkActive='active' routerLink='studentlist'>View Students</a>
         </li>
         <li>
           <a routerLinkActive='active' routerLink='studentlist/CreateStudent'>Add New Student</a>
         </li>
         <li>
-          <a routerLinkActive='active' routerLink='instructorlist'>View Instructors</a>
+          <a routerLinkActive='active' routerLink='courselist/CreateCourse'>Add New Course</a>
         </li>
         <li>
-          <a routerLinkActive='active' routerLink='instructorlist/CreateInstructor'>Add New Instructor</a>
+          <a routerLinkActive='active' routerLink='courselist'>View Courses</a>
         </li>
+       
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -42,6 +49,7 @@
    
     <div class="col-sm-8 text-left"> 
       <app-bs-modal ></app-bs-modal>
+  
       <router-outlet></router-outlet>
       
       
