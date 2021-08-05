@@ -1,6 +1,7 @@
+import { Entity } from "./etity";
 
 
-export class Account {
+export class Account extends Entity {
 
 
     ForeignId: number;

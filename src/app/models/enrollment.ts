@@ -1,7 +1,8 @@
 import { Grade } from "../enum.Omran.Sama/grade";
 import { Semester } from "../enum.Omran.Sama/semester";
+import { Entity } from "./etity";
 
-export class Enrollment {
+export class Enrollment extends Entity {
 
 
     StudentId: number;
