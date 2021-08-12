@@ -2,52 +2,53 @@
     <div class="row">
 
         <div class="col-md-4">
-            <p style="font-weight: bold; color: blue;"> Please fill out this form to create a student.</p>
+            <p class="specialP" > Please fill out this form to create a student.</p>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-4">
 
-            <input type="text" class="from-control" placeholder="First name">
+            <input type="text" class="from-control" placeholder="First name" [(ngModel)]="student.FirstName">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Last name">
+            <input type="text" class="from-control" placeholder="Last name" [(ngModel)]="student.LastName">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Age">
-        </div>
-    </div>
-    <br />
-
-    <div class="row">
-        <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Address">
-        </div>
-        <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="State">
-        </div>
-        <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="City">
+            <input type="text" class="from-control" placeholder="Age" [(ngModel)]="student.Age">
         </div>
     </div>
     <br />
 
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Zip">
+            <input type="text" class="from-control" placeholder="Address" [(ngModel)]="student.Address.Addr1">
+            
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Phone">
+            <input type="text" class="from-control" placeholder="State" [(ngModel)]="student.Address.State">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="E-mail">
+            <input type="text" class="from-control" placeholder="City" [(ngModel)]="student.Address.City">
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="Zip" [(ngModel)]="student.Address.Zip">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="Phone" [(ngModel)]="student.PhoneNumbers[0]">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="E-mail"  [(ngModel)]="student.Email">
         </div>
     </div>
     <br />
     <div class="row">
         <div class="col-md-4">
-            <button type="button" class="btn btn-success">Save</button>
+            <button type="button" class="btn btn-success" (click)="addStudent()">Save</button>
 
         </div>
 
