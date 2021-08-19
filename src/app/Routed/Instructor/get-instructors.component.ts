@@ -26,6 +26,7 @@ export class GetInstructorsComponent implements OnInit {
      this.http.get(getInstructorUrl).subscribe(
        data=>
       {
+        
         this.Instructors=data
       },
       error=>

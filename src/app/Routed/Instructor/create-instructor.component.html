@@ -1,11 +1,33 @@
+<div class=container>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="First Name" [(ngModel)]="instructor.FirstName">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="Last Name" [(ngModel)]=instructor.LastName>
+        </div>
+        <div>
+            <input type="text" class="from-control" placeholder="UserId" [(ngModel)]="instructor.UserId">
+        </div>
 
-<div class="container">
-<div class="row">
-<div class="col-md-4">
-<input type="text" class="from-control" placeholder="Firstname">
-<br>
-<br>
-<input type="text" class ="from-control" placeholder="Lastname">
-</div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="Address" [(ngModel)]="instructor.Address.Addr1">
+        </div>
+        <div class="col-md-4">
+            <input type="text" class="from-control" placeholder="PhoneNumber" [(ngModel)]="instructor. PhoneNumber[0]">
+        </div>
+
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <button type="button" class="btn btn-success" (click)="createInstrutor()">Save</button>
+        </div>
+
+
+    </div>
 
 </div>

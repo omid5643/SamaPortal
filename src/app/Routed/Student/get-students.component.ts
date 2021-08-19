@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { StudentService } from './student-service';
 //import { Observable, throwError } from 'rxjs';
+import { Injectable } from '@angular/core';
 @Component({
   selector: 'app-get-students',
   templateUrl: './get-students.component.html',
@@ -9,21 +11,23 @@ import { HttpClient } from '@angular/common/http';
 export class GetStudentsComponent implements OnInit {
   Title: string;
   Students: any;
-  constructor(private http: HttpClient) {
+  constructor(private studentService: StudentService) {
 
-    this.Title = "Student List Page";
+
   }
 
   ngOnInit() {
-    let getStudentUrl = 'http://localhost:59019/api/Student/Load';
-    //TODO:add type and service
-    // this.http.get<Student[]>(getStudentUrl).subscribe(data=>{})
-    this.http.get(getStudentUrl).subscribe(data =>
 
-
-      this.Students = data)
-
+    this.getStudent();
 
   }
+  getStudent() {
+
+
+    this.studentService.GetStudents().subscribe(x=>this.Students=x)
+  }
+
+
 
 }
+
