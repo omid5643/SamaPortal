@@ -21,7 +21,6 @@ export class CreateInstructorComponent implements OnInit {
   ngOnInit() {
   }
   createInstrutor() {
-  // this.instructor.LastName="Rus";
     this.instructorService.CreateInstructor(this.instructor);
     
 

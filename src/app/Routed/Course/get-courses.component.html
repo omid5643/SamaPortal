@@ -5,14 +5,22 @@
  
     <table class="listTable" >
         <tr>
-         
+          <th>Course Id</th>
           <th>Course Name</th>
           <th>Credit</th>
+          <th>PreReqId</th>
+          <th>Cost</th>
+          <th>Remove</th>
           
         </tr>
         <tr *ngFor="let cr of Courses ">
-          <td>{{cr.Course}}</td>
-          <td>{{cr.Credit}}</td>
+          <td>{{cr.id}}</td>
+          <td>{{cr.name}}</td>
+          <td>{{cr.credit}}</td>
+          <td>{{cr.preReqId}}</td>
+          <td>{{cr.cost}}</td>
+          <td><button type="button" class="btn btn-danger"(click)="removeCourse(cr.id)">Remove</button>
+          </td>
     
          </tr>
       
