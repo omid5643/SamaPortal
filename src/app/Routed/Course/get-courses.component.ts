@@ -1,43 +1,45 @@
 //ran ng update to migrate
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import {ModalService} from '../../services/modal-service';
+import { ModalService } from '../../services/modal-service';
+import { CourseService } from './course-service';
 
 @Component({
   selector: 'app-get-courses',
   templateUrl: './get-courses.component.html',
   styleUrls: ['./get-courses.component.less']
 })
-export class GetCourseComponent implements OnInit {
-  Title:string;
-  Courses :any;
- 
+export class GetCoursesComponent implements OnInit {
+  Title: string;
+  Courses: any;
 
-  constructor(private http: HttpClient, private modalService:ModalService)
-   { 
 
-    this.Title="Course List Page";
-   }
+  constructor(private courseService: CourseService, private modalService: ModalService) {
 
-  ngOnInit() {
-    let getCourseUrl = 'http://localhost:59019/api/Course/Load';
-    //TODO:add type and service
-   // this.http.get<Instructor[]>(getInstructorUrl).subscribe(data=>{})
-     this.http.get(getCourseUrl).subscribe(
-       data=>
-      {
-        this. Courses=data
-      },
-      error=>
-      { 
-        this.modalService.ShowModal()
-      }
-      
-      )
-    
+    this.Title = "Course List Page";
   }
 
-  
+  ngOnInit() {
+
+    this.getCourses();
+  }
+  getCourses() {
+
+    this.courseService.GetCourses().subscribe(data => this.Courses = data);
+
+  }
+  removeCourse(id:number) {
+
+   this.courseService.RemoveCourse(id).subscribe(x=>
+    
+    {
+
+      this.getCourses()
+
+    });
+  }
+
+
+
 }
 
 

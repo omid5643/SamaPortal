@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Instructor } from '../../models/instructor';
 import { ModalService } from '../../services/modal-service';
+import { Observable } from 'rxjs';
+import { url } from 'inspector';
 @Injectable({ providedIn: 'root' })
 
 export class InstructorService {
@@ -17,6 +19,21 @@ export class InstructorService {
         error => {
             this.modalService.ShowModal()
         }
+
+
+    }
+    GetInstructors(): Observable<Instructor[]> {
+        let getInstructorUrl = 'http://localhost:59019/api/Instructor/Load';
+        return this.http.get<Instructor[]>(getInstructorUrl);
+
+
+
+    }
+    RemoveInstructor(id:number):Observable<boolean>{
+        let Url = 'http://localhost:59019/api/Instructor/Remove';
+        let body = new HttpParams();
+        body = body.set('id', id);
+       return this.http.post(Url,body) as Observable<boolean> ;
 
 
     }

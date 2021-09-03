@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Student } from '../../models/student';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { ModalService } from '../../services/modal-service';
 import { Observable } from 'rxjs';
 
@@ -24,12 +24,18 @@ export class StudentService {
 
     }
 
-    GetStudents():Observable<Student[]>{
+    GetStudents(): Observable<Student[]> {
         let getStudentUrl = 'http://localhost:59019/api/Student/Load';
-        //TODO:add type and service
-        // this.http.get<Student[]>(getStudentUrl).subscribe(data=>{})
-       return this.http.get<Student[]>(getStudentUrl);
-    
+        return this.http.get<Student[]>(getStudentUrl);
+
+
+    }
+    RemoveStudent(id:number):Observable<boolean>{
+        let Url = 'http://localhost:59019/api/Student/Remove';
+        let body= new HttpParams();
+       body= body.set('id',id);
+      return  this.http.post(Url,body) as Observable<boolean>;
+
 
     }
 

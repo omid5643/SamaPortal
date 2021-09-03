@@ -9,15 +9,16 @@ export class Student extends Entity {
     LastName: string;
     Age: number;
     Address: Address;
-    PhoneNumbers: string[];
-    UserId: number
-    CreateDate: DataCue;
-    CreateBy: String;
+   PhoneNumbers: string[];
+    UserId: number;
+    CreateDate:Date;
+    CreateBy: string;
     Email: string;
     constructor() {
         super();
 
         this.Address = new Address();
+        this.PhoneNumbers=[];
 
 
     }

@@ -6,19 +6,25 @@
 
   <table class="listTable">
     <tr>
-
+      <th>Instructor Id</th>
       <th>Instructor First Name</th>
       <th>Instructor Last Name</th>
       <th>Instructor User Id</th>
       <th>Instructor Address</th>
       <th>Instructor PhoneNumber</th>
+      <th>Instructor Email</th>
+      <th> Remove</th>
     </tr>
     <tr *ngFor="let inst of Instructors">
+      <td>{{inst.id}}</td>
       <td>{{inst.firstName}}</td>
       <td>{{inst.lastName}}</td>
       <td>{{inst.UserId}}</td>
-      <td>{{inst.Address}}</td>
-      <td>{{inst.PhoneNumber}}</td>
+      <td>{{inst.address.addr1}}</td>
+      <td>{{inst.phoneNumber}}</td>
+      <td>{{inst.email}}</td>
+      <td><button type="button" class="btn btn-danger"(click)=" removeInstructor(inst.id)">Remove</button></td>
+
     </tr>
 
   </table>

@@ -18,7 +18,6 @@ export class CreateCourseComponent implements OnInit {
 
   ngOnInit() {
 
-
   }
 
   createCourse() {

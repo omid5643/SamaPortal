@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GetStudentsComponent } from './get-students.component';
 import { Student } from '../../models/student';
 import { Alert } from 'selenium-webdriver';
-import { HttpClient } from '@angular/common/http';
 import { ModalService } from '../../services/modal-service';
 import { StudentService } from './student-service';
 @Component({
@@ -12,6 +10,7 @@ import { StudentService } from './student-service';
 })
 export class CreateStudentComponent implements OnInit {
   student: Student;
+  //studentPhoneNumber:string;
 
 
   constructor( private modalService: ModalService, private studentservice: StudentService) {
@@ -23,6 +22,9 @@ export class CreateStudentComponent implements OnInit {
   ngOnInit() {
   }
   createStudent() {
+   // var test=this.studentPhoneNumber;
+  // this.student.PhoneNumbers=[];
+    //this.student.PhoneNumbers[0]=this.studentPhoneNumber;
 
     this.studentservice.CreateStudent(this.student);
 

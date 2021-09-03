@@ -1,7 +1,9 @@
 //ran ng update to migrate
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Instructor } from '../../models/instructor';
 import {ModalService} from '../../services/modal-service';
+import { InstructorService } from './instructor-service';
+
 
 @Component({
   selector: 'app-get-instructors',
@@ -13,30 +15,28 @@ export class GetInstructorsComponent implements OnInit {
   Instructors:any;
  
 
-  constructor(private http: HttpClient, private modalService:ModalService)
-   { 
+  constructor(private modalService:ModalService,private instructorService:InstructorService)
+  { 
 
     this.Title="Instructor List Page";
-   }
+  }
 
   ngOnInit() {
-    let getInstructorUrl = 'http://localhost:59019/api/Instructor/Load';
-    //TODO:add type and service
-   // this.http.get<Instructor[]>(getInstructorUrl).subscribe(data=>{})
-     this.http.get(getInstructorUrl).subscribe(
-       data=>
-      {
-        
-        this.Instructors=data
-      },
-      error=>
-      { 
-        this.modalService.ShowModal()
-      }
-      
-      )
-    
+  
+    this.getInstructors();
   }
+  getInstructors(){
+    this.instructorService.GetInstructors().subscribe(data=>this.Instructors=data)
+
+  }
+  removeInstructor(id:number){
+
+    this.instructorService.RemoveInstructor(id).subscribe(x=>{
+
+      this.getInstructors();
+    });
+  }
+  
 
   
 }

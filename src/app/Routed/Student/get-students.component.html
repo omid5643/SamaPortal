@@ -1,10 +1,10 @@
 <div class="container">
 
-  <p> {{ Title}}</p>
+  <p> </p>
 
   <table class="listTable">
     <tr>
-
+      <th>Student Id</th>
       <th>Student First Name</th>
       <th>Student Last Name</th>
       <th>Student Age</th>
@@ -13,19 +13,24 @@
       <th>Student City</th>
       <th>Student Zip</th>
       <th>Student Phone</th>
-      <th>Student E-mail</th>
+      <th>Student Email</th>
+      <th>Remove</th>
+     
 
     </tr>
     <tr *ngFor="let st of Students ">
+      <td>{{st.id}}</td>
       <td>{{st.firstName}}</td>
       <td>{{st.lastName}}</td>
       <td>{{st.age}}</td>
-      <td>{{st.Addr1}}</td>
-      <td>{{st.State}}</td>
-      <td>{{st.City}}</td>
-      <td>{{st.Zip}}</td>
-      <td>{{st.phone}}</td>
-      <td>{{st.a-mail}}</td>
+      <td>{{st.address.addr1}}</td>
+      <td>{{st.address.state}}</td>
+      <td>{{st.address.city}}</td>
+      <td>{{st.address.zip}}</td>
+      <td>{{st.phoneNumbers}}</td>
+      <td>{{st.email}}</td>
+      <td><button type="button" class="btn btn-danger"(click)="removeStudent(st.id)">Remove</button></td>
+
 
     </tr>
 
