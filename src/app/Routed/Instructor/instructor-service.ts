@@ -4,6 +4,7 @@ import { Instructor } from '../../models/instructor';
 import { ModalService } from '../../services/modal-service';
 import { Observable } from 'rxjs';
 import { url } from 'inspector';
+import { error } from 'console';
 @Injectable({ providedIn: 'root' })
 
 export class InstructorService {
@@ -38,4 +39,22 @@ export class InstructorService {
 
     }
 
-}
+    UpdateInstructor(instructor:Instructor)
+    {
+
+        let Url = 'http://localhost:59019/api/Instructor/Update';
+       return this.http.post(Url,instructor).subscribe() ;
+       error => {
+        this.modalService.ShowModal()
+    }
+
+
+     }
+
+            
+        
+
+
+    }
+
+

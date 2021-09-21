@@ -1,10 +1,10 @@
 <div class="container">
 
 
-  <p>{{Title}}</p>
 
 
-  <table class="listTable">
+
+  <table class="listTable" *ngIf="Instructors.length>0">
     <tr>
       <th>Instructor Id</th>
       <th>Instructor First Name</th>
@@ -14,18 +14,72 @@
       <th>Instructor PhoneNumber</th>
       <th>Instructor Email</th>
       <th> Remove</th>
+      <th> Update</th>
+
+
     </tr>
     <tr *ngFor="let inst of Instructors">
-      <td>{{inst.id}}</td>
-      <td>{{inst.firstName}}</td>
-      <td>{{inst.lastName}}</td>
+      <td>{{inst.Id}}</td>
+      <td>{{inst.FirstName}}</td>
+      <td>{{inst.LastName}}</td>
       <td>{{inst.UserId}}</td>
-      <td>{{inst.address.addr1}}</td>
-      <td>{{inst.phoneNumber}}</td>
-      <td>{{inst.email}}</td>
-      <td><button type="button" class="btn btn-danger"(click)=" removeInstructor(inst.id)">Remove</button></td>
-
+      <td>{{inst.Address.Addr1}}</td>
+      <td>{{inst.PhoneNumber}}</td>
+      <td>{{inst.Email}}</td>
+      <td><button type="button" class="btn btn-danger" (click)=" removeInstructor(inst.Id)">Remove</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="showUpdateModal(inst.Id)">update</button></td>
     </tr>
 
   </table>
+  <div *ngIf="Instructors.length==0">
+    <p>No data to show</p>
+  </div>
+
+  <button type="button" [style.visibility]="'hidden'" id="openUpdateModalButton" class="btn btn-primary"
+    data-toggle="modal" data-target="#updateModal">
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit instrunctor information</h5>
+
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder="FirstName" [(ngModel)]="InstructorToUpdate.FirstName"/>
+            </div>
+           
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder="LastName" [(ngModel)]="InstructorToUpdate.LastName "/>
+
+            </div>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder=" Address" [(ngModel)]="InstructorToUpdate.Address.Addr1"/>
+            </div>
+         
+              <div class="col-xs-4">
+                <input type="text"class="form-control" placeholder="PhoneNumber" [(ngModel)]="InstructorToUpdate.PhoneNumber"/>
+              </div>
+              <div class="col-xs-4">
+                <input type="text"class="form-control" placeholder="Email" [(ngModel)]="InstructorToUpdate.Email"/>
+              </div>
+           
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="updateInstructor()">Save</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
   <br />
