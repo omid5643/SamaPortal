@@ -1,8 +1,7 @@
 import { Address } from "./address";
 import { Entity } from "./etity";
 
-export class Instructor extends Entity {
-
+export class Instructor extends Entity  {
 
     FirstName: string;
     LastName: string;
@@ -13,7 +12,7 @@ export class Instructor extends Entity {
     CreateDate: Date;
     CreateBy: string;
     constructor() {
-        super();
+      super()
 
         this.Address = new Address();
         this.PhoneNumber=[];

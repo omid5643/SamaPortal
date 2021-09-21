@@ -15,6 +15,7 @@ import { BsModalComponent } from './components/bs-modal.component';
 
 
 
+
 export const APP_VERSION_TOKEN :InjectionToken<string>=new InjectionToken<string>('currentappverion');
 export function InitApp()
 {
