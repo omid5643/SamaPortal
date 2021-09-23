@@ -1,31 +1,78 @@
 <div class="container">
 
-    
-    <p>{{Title}}</p>
- 
-    <table class="listTable" >
-        <tr>
-          <th>Course Id</th>
-          <th>Course Name</th>
-          <th>Credit</th>
-          <th>PreReqId</th>
-          <th>Cost</th>
-          <th>Remove</th>
-          
-        </tr>
-        <tr *ngFor="let cr of Courses ">
-          <td>{{cr.id}}</td>
-          <td>{{cr.name}}</td>
-          <td>{{cr.credit}}</td>
-          <td>{{cr.preReqId}}</td>
-          <td>{{cr.cost}}</td>
-          <td><button type="button" class="btn btn-danger"(click)="removeCourse(cr.id)">Remove</button>
-          </td>
-    
-         </tr>
-      
-      </table>
+
+  <p>{{Title}}</p>
+
+  <table class="listTable" *ngIf="Courses.length>0">
+    <tr>
+      <th>Course Id</th>
+      <th>Course Name</th>
+      <th>Credit</th>
+      <th>PreReqId</th>
+      <th>Cost</th>
+      <th>Remove</th>
+      <th>Update</th>
+
+    </tr>
+    <tr *ngFor="let cr of Courses ">
+      <td>{{cr.Id}}</td>
+      <td>{{cr.Name}}</td>
+      <td>{{cr.Credit}}</td>
+      <td>{{cr.PreReqId}}</td>
+      <td>{{cr.Cost}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="removeCourse(cr.Id)">Remove</button>
+      <td><button type="button" class="btn btn-danger" (click)="showUpdateModal(cr.Id)">Update</button>
+      </td>
+
+    </tr>
+
+
+
+  </table>
+  <div *ngIf="Courses.length==0">
+    <p>No data to show</p>
+  </div>
+
+  <button type="button" [style.visibility]="'hidden'" id="openUpdateModalButton" class="btn btn-primary"
+    data-toggle="modal" data-target="#updateModal">
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit course information</h5>
+
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder="CourseName" [(ngModel)]="CourseToUpdate.Name" />
+            </div>
+
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder="Credit" [(ngModel)]="CourseToUpdate.Credit" />
+            </div>
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder=" PreReqId" [(ngModel)]="CourseToUpdate.PreReqId"/>
+            </div>
+
+            <div class="col-xs-4">
+              <input type="text" class="form-control" placeholder="Cost" [(ngModel)]="CourseToUpdate.Cost" />
+            </div>
+
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="updateCourse()">Save</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-
- 
