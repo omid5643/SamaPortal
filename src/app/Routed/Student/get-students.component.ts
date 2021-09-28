@@ -5,6 +5,7 @@ import { Student } from '../../models/student';
 import { NgModule } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
+
 @Component({
   selector: 'app-get-students',
   templateUrl: './get-students.component.html',
@@ -12,9 +13,14 @@ import { Injectable } from '@angular/core';
 })
 export class GetStudentsComponent implements OnInit {
   Title: string;
-  Students: any;
+  Students: Student[];
+  StudentToUpdate:Student;
+
   constructor(private studentService: StudentService, private modalService: ModalService) {
+
     this.Title = "Instructor List Page";
+    this.StudentToUpdate= new Student();
+   
 
   }
 
@@ -41,7 +47,23 @@ export class GetStudentsComponent implements OnInit {
 
 
   }
+  updateStudent(){
 
+  this.studentService.UpdateStudent(this.StudentToUpdate);
+  this.getStudents();
+
+  }
+
+
+ showUpdateModal(id:number)
+  {
+  
+     let foundStudent=this.Students.find(x=>x.Id===id);
+
+     this.StudentToUpdate=foundStudent;
+
+      document.getElementById("openUpdateModalButton").click();
+  }
 
 
 

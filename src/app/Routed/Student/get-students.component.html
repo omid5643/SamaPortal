@@ -15,24 +15,90 @@
       <th>Student Phone</th>
       <th>Student Email</th>
       <th>Remove</th>
-     
+      <th>Update</th>
 
     </tr>
     <tr *ngFor="let st of Students ">
       <td>{{st.Id}}</td>
       <td>{{st.FirstName}}</td>
-      <td>{{st.lastName}}</td>
-      <td>{{st.age}}</td>
-      <td>{{st.address.addr1}}</td>
-      <td>{{st.address.state}}</td>
-      <td>{{st.address.city}}</td>
-      <td>{{st.address.zip}}</td>
-      <td>{{st.phoneNumbers}}</td>
-      <td>{{st.email}}</td>
-      <td><button type="button" class="btn btn-danger"(click)="removeStudent(st.id)">Remove</button></td>
-
+      <td>{{st.LastName}}</td>
+      <td>{{st.Age}}</td>
+      <td>{{st.Address.Addr1}}</td>
+      <td>{{st.Address.State}}</td>
+      <td>{{st.Address.City}}</td>
+      <td>{{st.Address.Zip}}</td>
+      <td>{{st.PhoneNumbers}}</td>
+      <td>{{st.Email}}</td>
+      <td><button type="button" class="btn btn-danger" (click)="removeStudent(st.Id)">Remove</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="showUpdateModal(st.Id)">Update</button></td>
 
     </tr>
 
   </table>
+</div>
+
+
+<button type="button" [style.visibility]="'hidden'" id="openUpdateModalButton" class="btn btn-primary"
+data-toggle="modal" data-target="#updateModal">
+</button>
+
+
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit student information</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="FirstName" [(ngModel)]=" StudentToUpdate.FirstName"/>
+            Name is requied/div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="LastName" [(ngModel)]=" StudentToUpdate.LastName " />
+
+          </div>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="LastName" [(ngModel)]=" StudentToUpdate.Age" />
+          </div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder=" Address"
+              [(ngModel)]=" StudentToUpdate.Address.Addr1" />
+          </div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder=" State"
+              [(ngModel)]=" StudentToUpdate.Address.State" />
+          </div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder=" City"
+              [(ngModel)]=" StudentToUpdate.Address.City" />
+          </div>
+          <div class="col-xs-4">
+          
+            <input type="text" class="form-control" placeholder="Zip" [(ngModel)]=" StudentToUpdate.Address.Zip" />
+          </div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="PhoneNumber"
+              [(ngModel)]=" StudentToUpdate.PhoneNumbers" />
+          </div>
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="Email" [(ngModel)]=" StudentToUpdate.Email" />
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="updateStudent()">Save</button>
+
+      </div>
+    </div>
+  </div>
 </div>

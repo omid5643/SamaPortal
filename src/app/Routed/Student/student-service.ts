@@ -30,11 +30,23 @@ export class StudentService {
 
 
     }
-    RemoveStudent(id:number):Observable<boolean>{
+    RemoveStudent(id: number): Observable<boolean> {
         let Url = 'http://localhost:59019/api/Student/Remove';
-        let body= new HttpParams();
-       body= body.set('id',id);
-      return  this.http.post(Url,body) as Observable<boolean>;
+        let body = new HttpParams();
+        body = body.set('id', id);
+        return this.http.post(Url, body) as Observable<boolean>;
+
+
+    }
+    UpdateStudent(student: Student) {
+
+        let Url = 'http://localhost:59019/api/Student/Update';
+
+        return this.http.post(Url, student).subscribe()
+
+        error => {
+            this.modalService.ShowModal()
+        }
 
 
     }
