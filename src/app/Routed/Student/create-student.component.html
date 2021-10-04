@@ -10,29 +10,31 @@
     <div class="row">
         <div class="col-md-4">
 
-            <input type="text" class="from-control" placeholder="First name" [(ngModel)]="student.FirstName" #firstNameModel="ngModel"  required  minlength="2"  >
+            <input type="text" class="from-control" placeholder="First name" [(ngModel)]="student.FirstName" #firstNameModel="ngModel"  required  minlength="2" >
             <div *ngIf="firstNameModel.errors?.required" style="color: red">Required</div>
             <div *ngIf="firstNameModel.errors?.minlength" style="color:red">Needs to be at least 2 characters</div>
 
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Last name" [(ngModel)]="student.LastName" #lastNameModel="ngModel"  required  >
+            <input type="text" class="from-control" placeholder="Last name" [(ngModel)]="student.LastName" #lastNameModel="ngModel"  required>
             <div *ngIf="lastNameModel.errors?.required" style="color: red">Required</div>
-         
+
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="Age" [(ngModel)]="student.Age">
+         
         </div>
     </div>
     <br />
 
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Address" [(ngModel)]="student.Address.Addr1">
-            
+            <input type="text" class="from-control" placeholder="Address" [(ngModel)]="student.Address.Addr1" #addr1Model="ngModel" required>
+            <div *ngIf="addr1Model.errors?.requied" style="color: red">Required</div>
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="State" [(ngModel)]="student.Address.State">
+            <input type="text" class="from-control" placeholder="State" [(ngModel)]="student.Address.State" #stateModel="ngModel" required>
+            <div *ngIf="stateModel.errors?.required" style="color: red">Required</div> 
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="City" [(ngModel)]="student.Address.City">
@@ -48,7 +50,9 @@
             <input type="text" class="from-control" placeholder="Phone" [(ngModel)]="student.PhoneNumbers[0]">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email" email  required/>
+            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email"  #emailModel="ngModel" email  required/>
+            <div *ngIf="emailModel.errors?.required" style="color: red">Required</div>
+         
             
         </div>
     </div>
@@ -58,8 +62,11 @@
             <button type="button" class="btn btn-success"  (click)="createStudent()"  
             
             [disabled]="!firstNameModel.valid ||
-                        !lastNameModel.valid
-            
+                        !lastNameModel.valid||
+                        !emailModel.valid||
+                        !stateModel.valid
+
+                  
                        "  
             
             >Save</button>
