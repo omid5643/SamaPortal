@@ -1,10 +1,14 @@
 <div class=container>
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="First Name" [(ngModel)]="instructor.FirstName">
+            <input type="text" class="from-control" placeholder="First Name" [(ngModel)]="instructor.FirstName"#firstNameModel="ngModel" required minlength="2">
+            <div *ngIf="firstNameModel.errors?.required" style="color: red">Required</div>
+            <div *ngIf="firstNameModel.errors?.minlength" style="color:red">Needs to be at least 2 characters</div>
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Last Name" [(ngModel)]=instructor.LastName>
+            <input type="text" class="from-control" placeholder="Last Name" [(ngModel)]=instructor.LastName #lastNameModel="ngModel" required>
+            <div *ngIf="lastNameModel.errors?.required" style="color: red">Required</div>
+            <div *ngIf="lastNameModel.errors?.minlength" style="color:red">Needs to be at least 2 characters</div>
         </div>
        
 
@@ -18,14 +22,16 @@
             <input type="text" class="from-control" placeholder="PhoneNumber" [(ngModel)]="instructor.PhoneNumber[0]">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="instructor.Email"/>
+            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="instructor.Email" #emailModel="ngModel" required />
+            <div *ngIf="emailModel.errors?.required" style="color:red"> Required</div>
+            <div *ngIf="emailModel.errors?.minlength" style="color:red">Needs to be at least 2 characters</div>
         </div>
 
     </div>
     <br>
     <div class="row">
         <div class="col-md-4">
-            <button type="button" class="btn btn-success" (click)="createInstrutor()">Save</button>
+            <button type="button" class="btn btn-success" (click)="createInstrutor()" [disabled]="!firstNameModel.valid|| !lastNameModel.valid|| !emailModel.valid">Save</button>
         </div>
 
 

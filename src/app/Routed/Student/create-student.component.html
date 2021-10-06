@@ -18,7 +18,8 @@
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="Last name" [(ngModel)]="student.LastName" #lastNameModel="ngModel"  required>
             <div *ngIf="lastNameModel.errors?.required" style="color: red">Required</div>
-
+          
+         
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="Age" [(ngModel)]="student.Age">
