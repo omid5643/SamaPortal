@@ -8,11 +8,15 @@
 
         <div class="col-md-4">
 
-            <input type="text" class="from-control" placeholder="Name" [(ngModel)]="course.Name">
+            <input type="text" class="from-control" placeholder="Name" [(ngModel)]="course.Name"#nameModel="ngModel" required minlength="2">
+            <div *ngIf="nameModel.errors?.required" style="color:red"> Required</div>
+            <div *ngIf="nameModel.errors?.minlength" style="color: red"> Needs to be at least 2 characters</div>
         </div>
         
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Credit" [(ngModel)]="course.Credit">
+            <input type="text" class="from-control" placeholder="Credit" [(ngModel)]="course.Credit"#creditModel="ngModel" required minlenght="2">
+            <div *ngIf="creditModel.errors?.required" style="color:red"> Required</div>
+        
         </div>
     </div>
 
@@ -20,7 +24,8 @@
         <div class="row">
             <div class="col-md-4">
 
-                <input type="text" class="from-control" placeholder="PreReqId" [(ngModel)]="course.PreReqId">
+                <input type="text" class="from-control" placeholder="PreReqId" [(ngModel)]="course.PreReqId" #prereqidModel="ngModel" required >
+                <div *ngIf="prereqidModel.errors?.required" style="color:red"> Required</div>
 
             </div>
             <div class="col-md-4">
@@ -31,7 +36,7 @@
         <br/>
         <div class="row">
          <div class="col-md-4">
-            <button type="button" class="btn btn-success" (click)="createCourse()">Save</button>
+            <button type="button" class="btn btn-success" (click)="createCourse()" [disabled]="!nameModel.valid|| !creditModel.valid ||!prereqidModel.valid">Save</button>
 
          </div>
 

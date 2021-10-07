@@ -8,8 +8,8 @@ import { InstructorService } from './instructor-service';
 @Component({
   selector: 'app-get-instructors',
   templateUrl: './get-instructors.component.html',
-  styleUrls: ['./get-instructors.component.less'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  styleUrls: ['./get-instructors.component.less']
+
 })
 export class GetInstructorsComponent implements OnInit {
   Title:string;

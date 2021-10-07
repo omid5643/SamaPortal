@@ -8,8 +8,8 @@ import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/
 @Component({
   selector: 'app-get-courses',
   templateUrl: './get-courses.component.html',
-  styleUrls: ['./get-courses.component.less'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  styleUrls: ['./get-courses.component.less']
+ 
 
 })
 export class GetCoursesComponent implements OnInit {

@@ -20,10 +20,9 @@
       <td>{{cr.Credit}}</td>
       <td>{{cr.PreReqId}}</td>
       <td>{{cr.Cost}}</td>
-      <td><button type="button" class="btn btn-danger" (click)="removeCourse(cr.Id)">Remove</button>
-      <td><button type="button" class="btn btn-danger" (click)="showUpdateModal(cr.Id)">Update</button>
+      <td><button type="button" class="btn btn-danger"(click)="removeCourse(cr.Id)">Remove</button>
+      <td><button type="button" class="btn btn-danger"(click)="showUpdateModal(cr.Id)">Update</button>
       </td>
-
     </tr>
 
 
@@ -68,7 +67,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="updateCourse()">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)="updateCourse()">Save</button>
 
         </div>
       </div>
