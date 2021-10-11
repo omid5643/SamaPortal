@@ -11,13 +11,13 @@
         <div class="col-md-4">
 
             <input type="text" class="from-control" placeholder="First name" [(ngModel)]="student.FirstName" #firstNameModel="ngModel"  required  minlength="2" >
-            <div *ngIf="firstNameModel.errors?.required" style="color: red">Required</div>
+            <div *ngIf="firstNameModel.errors?.required && firstNameModel.touched " style="color: red">Required</div>
             <div *ngIf="firstNameModel.errors?.minlength" style="color:red">Needs to be at least 2 characters</div>
 
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="Last name" [(ngModel)]="student.LastName" #lastNameModel="ngModel"  required>
-            <div *ngIf="lastNameModel.errors?.required" style="color: red">Required</div>
+            <div *ngIf="lastNameModel.errors?.required && lastNameModel.touched" style="color: red">Required</div>
           
          
         </div>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="State" [(ngModel)]="student.Address.State" #stateModel="ngModel" required>
-            <div *ngIf="stateModel.errors?.required" style="color: red">Required</div> 
+            <div *ngIf="stateModel.errors?.required && stateModel.touched" style="color: red">Required</div> 
         </div>
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="City" [(ngModel)]="student.Address.City">
@@ -51,8 +51,11 @@
             <input type="text" class="from-control" placeholder="Phone" [(ngModel)]="student.PhoneNumbers[0]">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email"  #emailModel="ngModel" email  required/>
-            <div *ngIf="emailModel.errors?.required" style="color: red">Required</div>
+            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email"  #emailModel="ngModel" email  required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"/>
+            <div *ngIf="emailModel.errors?.required && emailModel.touched" style="color: red">Required</div>
+            <div *ngIf="emailModel.errors && emailModel?.errors.pattern &&emailModel.touched " style="color: red">
+                <span>email is not in valid format</span>
+                    </div>
          
             
         </div>
