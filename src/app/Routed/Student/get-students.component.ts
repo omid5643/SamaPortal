@@ -5,6 +5,7 @@ import { Student } from '../../models/student';
 import { NgModule } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-get-students',
@@ -15,11 +16,14 @@ export class GetStudentsComponent implements OnInit {
   Title: string;
   Students: Student[];
   StudentToUpdate:Student;
+  StudentsIds:Student[];
 
-  constructor(private studentService: StudentService, private modalService: ModalService) {
+
+  constructor(private studentService: StudentService, private modalService: ModalService ) {
 
     this.Title = "Instructor List Page";
     this.StudentToUpdate= new Student();
+    
    
 
   }
@@ -64,9 +68,34 @@ export class GetStudentsComponent implements OnInit {
 
       document.getElementById("openUpdateModalButton").click();
   }
+  removeManyStudents(id:number){
+
+   if(this.StudentsIds.filter(x=>x.Id===id)){
+     this.removeStudent(id);}
+   else if(this.StudentsIds.filter(x=>x.Id!==id))
+  {
+    this.StudentsIds.map(this.StudentsIds=Student[id]);
+
+  }
+
+
+  
+
+   }
+   removeMany(){
+
+
+
+    this.studentService.RemoveManyStudents(this.StudentsIds).subscribe(x => { this.getStudents(); });
+   }
+   
+   
+    
+  }
 
 
 
 
-}
+
+
 

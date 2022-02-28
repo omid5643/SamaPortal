@@ -1,6 +1,6 @@
 <div class="container">
 
-  <p> </p>
+  <p><button type="button"  class="btn btn-danger" click="removeMany(student[])">RemoveSelected</button> </p>
 
   <table class="listTable">
     <tr>
@@ -21,6 +21,7 @@
     <tr *ngFor="let st of Students ">
       <td>{{st.Id}}</td>
       <td>{{st.FirstName}}</td>
+      
       <td>{{st.LastName}}</td>
       <td>{{st.Age}}</td>
       <td>{{st.Address.Addr1}}</td>
@@ -29,8 +30,8 @@
       <td>{{st.Address.Zip}}</td>
       <td>{{st.PhoneNumbers}}</td>
       <td>{{st.Email}}</td>
-      <td><button type="button" class="btn btn-danger" (click)="removeStudent(st.Id)">Remove</button></td>
-      <td><button type="button" class="btn btn-danger" (click)="showUpdateModal(st.Id)">Update</button></td>
+      <td><input type="checkbox" name="st.Id" checked=" removeManyStudents(st.id)"></td>
+      <td><button type="button"  class="btn btn-danger" (click)="showUpdateModal(st.Id)">Update</button></td>
 
     </tr>
 
@@ -54,15 +55,16 @@ data-toggle="modal" data-target="#updateModal">
       <div class="modal-body">
         <div class="row">
           <div class="col-xs-4">
+          
             <input type="text" class="form-control" placeholder="FirstName" [(ngModel)]=" StudentToUpdate.FirstName"/>
-          </div>
+         
 
           <div class="col-xs-4">
             <input type="text" class="form-control" placeholder="LastName" [(ngModel)]=" StudentToUpdate.LastName"/>
 
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="Age" [(ngModel)]=" StudentToUpdate.Age" />
+            <input type="text" class="form-control" placeholder="" [(ngModel)]=" StudentToUpdate.Age" />
           </div>
 
           <div class="col-xs-4">

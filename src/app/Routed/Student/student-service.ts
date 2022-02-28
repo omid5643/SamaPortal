@@ -50,6 +50,15 @@ export class StudentService {
 
 
     }
+    RemoveManyStudents(Student:Student[]) {
+
+        let Url = 'http://localhost:59019/api/Student/RemoveMany';
+        
+        return this.http.post(Url, Student) as Observable<boolean>;
+
+
+
+    }
 
 }
 

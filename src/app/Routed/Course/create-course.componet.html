@@ -9,13 +9,13 @@
         <div class="col-md-4">
 
             <input type="text" class="from-control" placeholder="Name" [(ngModel)]="course.Name"#nameModel="ngModel" required minlength="2">
-            <div *ngIf="nameModel.errors?.required" style="color:red"> Required</div>
+            <div *ngIf="nameModel.errors?.required.touched" style="color:red"> Required</div>
             <div *ngIf="nameModel.errors?.minlength" style="color: red"> Needs to be at least 2 characters</div>
         </div>
         
         <div class="col-md-4">
             <input type="text" class="from-control" placeholder="Credit" [(ngModel)]="course.Credit"#creditModel="ngModel" required minlenght="2">
-            <div *ngIf="creditModel.errors?.required" style="color:red"> Required</div>
+            <div *ngIf="creditModel.errors?.required.touched" style="color:red"> Required</div>
         
         </div>
     </div>
@@ -25,7 +25,7 @@
             <div class="col-md-4">
 
                 <input type="text" class="from-control" placeholder="PreReqId" [(ngModel)]="course.PreReqId" #prereqidModel="ngModel" required >
-                <div *ngIf="prereqidModel.errors?.required" style="color:red"> Required</div>
+                <div *ngIf="prereqidModel.errors?.required.touched" style="color:red"> Required</div>
 
             </div>
             <div class="col-md-4">

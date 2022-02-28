@@ -51,7 +51,7 @@
             <input type="text" class="from-control" placeholder="Phone" [(ngModel)]="student.PhoneNumbers[0]">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email"  #emailModel="ngModel" email  required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"/>
+            <input type="text" class="from-control" placeholder="E-mail" [(ngModel)]="student.Email"  #emailModel="ngModel"  required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
             <div *ngIf="emailModel.errors?.required && emailModel.touched" style="color: red">Required</div>
             <div *ngIf="emailModel.errors && emailModel?.errors.pattern &&emailModel.touched " style="color: red">
                 <span>email is not in valid format</span>
