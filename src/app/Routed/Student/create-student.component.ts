@@ -9,7 +9,7 @@ import { StudentService } from './student-service';
   styleUrls: ['./create-student.component.less']
 })
 export class CreateStudentComponent implements OnInit {
-  student: Student;
+  student:Student;
   //studentPhoneNumber:string;
 
 
