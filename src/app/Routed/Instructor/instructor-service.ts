@@ -3,8 +3,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Instructor } from '../../models/instructor';
 import { ModalService } from '../../services/modal-service';
 import { Observable } from 'rxjs';
-import { url } from 'inspector';
-import { error } from 'console';
+// import { url } from 'inspector';
+// import { error } from 'console';
 @Injectable({ providedIn: 'root' })
 
 export class InstructorService {

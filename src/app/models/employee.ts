@@ -1,26 +1,28 @@
-
-import { Address } from "./address";
 import { Entity } from "./etity";
 
-export class Student extends Entity {
+import { Address } from "./address";
+export class Employee extends Entity {
 
     FirstName: string;
+
     LastName: string;
+
     Age: number;
-    Address: Address;
-    PhoneNumbers: string[];
+
     UserId: number;
+    Email: string;
+
+    Address: Address;
+    PhoneNumbers: string[]
     CreateDate: Date;
     CreateBy: string;
-    Email: string;
+
     constructor() {
         super();
 
         this.Address = new Address();
         this.PhoneNumbers = [];
 
-
     }
-
 
 }
