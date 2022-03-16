@@ -16,11 +16,13 @@ export class CreateInstructorComponent implements OnInit {
    { 
 
     this.instructor=new Instructor();
+    
    }
 
   ngOnInit() {
   }
   createInstrutor() {
+   
     this.instructorService.CreateInstructor(this.instructor);
     
 
