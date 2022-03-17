@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 const routes: Routes =
   [
     { path: '', component: GetCoursesComponent },
-    { path: 'Createcourse', component: CreateCourseComponent }
+    { path: 'CreateCourse', component: CreateCourseComponent }
   ];
 
 @NgModule({

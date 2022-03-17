@@ -8,7 +8,8 @@ import { GetEmployeesComponent } from './get-employees.component';
 
 
 
-const routes: Routes = [{ path: '', component: GetEmployeesComponent },
+const routes: Routes = 
+[{ path: '', component: GetEmployeesComponent },
 { path: 'CreateEmployee', component: CreateEmployeeComponent }
 ];
 

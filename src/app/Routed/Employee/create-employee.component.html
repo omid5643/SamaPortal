@@ -2,26 +2,26 @@
 
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="FirstName">
+            <input type="text" class="from-control" placeholder="FirstName"[(ngModel)]="employee.FirstName">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="LastName">
+            <input type="text" class="from-control" placeholder="LastName"[(ngModel)]="employee.LastName">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Age">
+            <input type="text" class="from-control" placeholder="Age"[(ngModel)]="employee.Age">
         </div>
 
     </div>
     <br>
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="UserId">
+            <input type="text" class="from-control" placeholder="UserId"[(ngModel)]="employee.UserId">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Email">
+            <input type="text" class="from-control" placeholder="Email"[(ngModel)]="employee.Email">
         </div>
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder="Address">
+            <input type="text" class="from-control" placeholder="Address"[(ngModel)]="employee.Address">
         </div>
 
     </div>
@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-4">
-            <input type="text" class="from-control" placeholder=" PhoneNumbers">
+            <input type="text" class="from-control" placeholder=" PhoneNumbers"[(ngModel)]="employee.PhoneNumbers">
         </div>
 
 
@@ -37,7 +37,7 @@
     <br>
     <div class="row">
     <div class="col-md-4">
-        <button type="button" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-success"(click)="createEmployee()">Save</button>
 
     </div>
 

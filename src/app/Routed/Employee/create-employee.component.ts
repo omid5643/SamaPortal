@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Employee } from "../../models/employee";
+import { EmployeeService } from "./employee-service";
+import { ModalService } from '../../services/modal-service';
 
 
 @Component({
@@ -12,7 +14,7 @@ import { Employee } from "../../models/employee";
 
     employee:Employee;
 
-constructor(){
+constructor(private employeeService:EmployeeService,private moduleService:ModalService){
 
 
     this.employee=new Employee();
@@ -23,6 +25,12 @@ constructor(){
 
     ngOnInit() {
         
+    }
+
+   createEmployee(){
+   this.employeeService.CreateEmployee(this.employee)
+
+
     }
 
 
