@@ -1,7 +1,9 @@
 import { Entity } from "./etity";
 
 import { Address } from "./address";
-export class Employee extends Entity {
+export class Employee 
+extends Entity
+ {
 
     FirstName: string;
 
@@ -14,11 +16,11 @@ export class Employee extends Entity {
 
     Address: Address;
     PhoneNumbers: string[]
-    CreateDate: Date;
+   CreateDate: Date;
     CreateBy: string;
 
     constructor() {
-        super();
+        super()
 
         this.Address = new Address();
         this.PhoneNumbers = [];

@@ -16,10 +16,10 @@ export class InstructorService {
 
     CreateInstructor(instructor: Instructor) {
         let createInstructorUrl = 'http://localhost:59019/api/Instructor/Add';
-        this.http.post(createInstructorUrl, instructor).subscribe()
+        this.http.post(createInstructorUrl, instructor).subscribe(
         error => {
             this.modalService.ShowModal()
-        }
+        });
 
 
     }

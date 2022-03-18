@@ -16,10 +16,10 @@ constructor( private http:HttpClient ,private modalService:ModalService){
 CreateEmployee(employee:Employee){
 
 let createEmployeeUrl='http://localhost:59019/api/Employee/Add';
-this.http.post(createEmployeeUrl,employee).subscribe()
+this.http.post(createEmployeeUrl,employee).subscribe(
     error => {
         this.modalService.ShowModal()
-    }
+    })
 
 
 }
