@@ -43,10 +43,10 @@ export class InstructorService {
     {
 
         let Url = 'http://localhost:59019/api/Instructor/Update';
-       return this.http.post(Url,instructor).subscribe() ;
-       error => {
+       return this.http.post(Url,instructor).subscribe( error => {
         this.modalService.ShowModal()
-    }
+    }) ;
+    
 
 
      }
