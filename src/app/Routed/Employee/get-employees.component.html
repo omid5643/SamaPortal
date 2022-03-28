@@ -1,25 +1,101 @@
 <div class="container">
 
-    <div class="row">
-    <div class="col_md_4">
-    <input type="text" class="from-control"  placeholder="FirstName">
-    
-    
+    <table class="listTable">
+
+        <tr>
+
+            <th>Employee Id</th>
+            <th>Employee FirstName</th>
+            <th>Employee LastName</th>
+            <th>Employee Age </th>
+            <th>Employee User Id</th>
+            <th>Employee Email</th>
+            <th>Employee Address</th>
+            <th>Employee PhoneNumber</th>
+            <th>Remove</th>
+            <th>Update</th>
+      
+
+
+        </tr>
+      <tr *ngFor="let emp of Employees">
+       <td>{{emp.Id}}</td>
+       <td>{{emp.FirstName}}</td>
+       <td>{{emp.LastName}}</td>
+       <td>{{emp.Age}}</td>
+       <td>{{emp.UserId}}</td>
+       <td>{{emp.Email}}</td>
+       <td>{{emp.Address.Addr1}}</td>
+       <td>{{emp.PhoneNumbers}}</td>
+       <td><button type="button" class="btn btn-danger" (click)="removeEmployee(emp.Id)">Remove</button></td>
+       <td><button type="button" class="btn btn-danger"(click)="showUpdateModal(emp.Id)">Update</button></td>
+      </tr>
+
+    </table>
+    <button type="button" [style.visibility]="'hidden'" id="openUpdateModalButton" class="btn btn-primary"
+    data-toggle="modal" data-target="#updateModal">
+  </button>
+
+   
+  <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Employee information</h5>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="FirstName" [(ngModel)]="EmployeeToUpdate.FirstName"/>
+          </div>
+         
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder="LastName" [(ngModel)]=" EmployeeToUpdate.LastName"/>
+          </div>
+
+          <div class="col-xs-4">
+            <input type="text" class="form-control" placeholder=" Age" [(ngModel)]=" EmployeeToUpdate.Age"/>
+          </div>
+       
+            <div class="col-xs-4">
+              <input type="text"class="form-control" placeholder="UserId" [(ngModel)]=" EmployeeToUpdate.UserId"/>
+            </div>
+            <div class="col-xs-4">
+              <input type="text"class="form-control" placeholder="Email" [(ngModel)]=" EmployeeToUpdate.Email"/>
+            </div>
+           <div class="col-xs-4">
+              <input type="text"class="form-control" placeholder="Address" [(ngModel)]=" EmployeeToUpdate.Address.Addr1"/>
+            </div>
+            <div class="col-xs-4">
+                <input type="text"class="form-control" placeholder="PhoneNumbers" [(ngModel)]=" EmployeeToUpdate.PhoneNumbers"/>
+              </div>
+           
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"(click)="updateEmployee()">Save</button>
+        
+      </div>
     </div>
-    
-    
-    
-    </div>
-    
-    
-    
-    
-    </div>
-    
-    
-    
-    
-    
-    
-    
-    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

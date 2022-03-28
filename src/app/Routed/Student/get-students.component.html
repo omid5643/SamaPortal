@@ -21,7 +21,6 @@
     <tr *ngFor="let st of Students ">
       <td>{{st.Id}}</td>
       <td>{{st.FirstName}}</td>
-      
       <td>{{st.LastName}}</td>
       <td>{{st.Age}}</td>
       <td>{{st.Address.Addr1}}</td>
@@ -30,7 +29,7 @@
       <td>{{st.Address.Zip}}</td>
       <td>{{st.PhoneNumbers}}</td>
       <td>{{st.Email}}</td>
-      <td><input type="checkbox" name="st.Id" checked=" removeManyStudents(st.id)"></td>
+      <td><input type="checkbox" name="st.Id" checked="removeMany()"></td>
       <td><button type="button"  class="btn btn-danger" (click)="showUpdateModal(st.Id)">Update</button></td>
 
     </tr>
@@ -58,33 +57,19 @@ data-toggle="modal" data-target="#updateModal">
           <div class="col-xs-4">
           
             <input type="text" class="form-control" placeholder="FirstName" [(ngModel)]=" StudentToUpdate.FirstName"/>
-         
+          </div>
 
           <div class="col-xs-4">
             <input type="text" class="form-control" placeholder="LastName" [(ngModel)]=" StudentToUpdate.LastName"/>
 
           </div>
           <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="" [(ngModel)]=" StudentToUpdate.Age" />
+            <input type="text" class="form-control" placeholder="Age" [(ngModel)]=" StudentToUpdate.Age" />
           </div>
 
           <div class="col-xs-4">
             <input type="text" class="form-control" placeholder="Address"
               [(ngModel)]=" StudentToUpdate.Address.Addr1" />
-          </div>
-
-          <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="State"
-              [(ngModel)]=" StudentToUpdate.Address.State" />
-          </div>
-
-          <div class="col-xs-4">
-            <input type="text" class="form-control" placeholder="City"
-              [(ngModel)]=" StudentToUpdate.Address.City" />
-          </div>
-          <div class="col-xs-4">
-          
-            <input type="text" class="form-control" placeholder="Zip" [(ngModel)]=" StudentToUpdate.Address.Zip" />
           </div>
 
           <div class="col-xs-4">
@@ -95,7 +80,7 @@ data-toggle="modal" data-target="#updateModal">
             <input type="text" class="form-control" placeholder="Email" [(ngModel)]="StudentToUpdate.Email" />
           </div>
 
-        </div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
