@@ -15,7 +15,8 @@ extends Entity
     Email: string;
 
     Address: Address;
-    PhoneNumbers: string[]
+    PhoneNumbers: string[];
+   EmployeeType:Employee;
    CreateDate: Date;
     CreateBy: string;
 
