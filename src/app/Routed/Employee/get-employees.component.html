@@ -12,6 +12,7 @@
             <th>Employee Email</th>
             <th>Employee Address</th>
             <th>Employee PhoneNumber</th>
+            <th>Employee EmployeeType</th>
             <th>Remove</th>
             <th>Update</th>
       
@@ -27,6 +28,7 @@
        <td>{{emp.Email}}</td>
        <td>{{emp.Address.Addr1}}</td>
        <td>{{emp.PhoneNumbers}}</td>
+       <td>{{emp.employeeType}}</td>
        <td><button type="button" class="btn btn-danger" (click)="removeEmployee(emp.Id)">Remove</button></td>
        <td><button type="button" class="btn btn-danger"(click)="showUpdateModal(emp.Id)">Update</button></td>
       </tr>

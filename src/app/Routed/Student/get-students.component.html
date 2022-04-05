@@ -29,7 +29,7 @@
       <td>{{st.Address.Zip}}</td>
       <td>{{st.PhoneNumbers}}</td>
       <td>{{st.Email}}</td>
-      <td><input type="checkbox" name="st.Id" checked="removeMany()"></td>
+      <td><input type="checkbox" name="st.Id" value="id" checked="RemoveSelected"(click)="removeManyStudents(st.id)"></td>
       <td><button type="button"  class="btn btn-danger" (click)="showUpdateModal(st.Id)">Update</button></td>
 
     </tr>

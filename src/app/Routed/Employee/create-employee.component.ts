@@ -13,11 +13,14 @@ import { ModalService } from '../../services/modal-service';
   export class CreateEmployeeComponent implements OnInit{
 
     employee:Employee;
+    employeeTypes:string[]=["Admin","Instructor","Facility"];
+    employeeType:string;
 
 constructor(private employeeService:EmployeeService,private moduleService:ModalService){
 
 
     this.employee=new Employee();
+   
 
  }
 
@@ -28,6 +31,7 @@ constructor(private employeeService:EmployeeService,private moduleService:ModalS
     }
 
    createEmployee(){
+     this.employee.EmployeeType=this.employeeType;
    this.employeeService.CreateEmployee(this.employee)
 
 

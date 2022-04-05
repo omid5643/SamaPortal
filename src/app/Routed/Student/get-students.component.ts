@@ -23,6 +23,7 @@ export class GetStudentsComponent implements OnInit {
 
     this.Title = "Instructor List Page";
     this.StudentToUpdate= new Student();
+    this.StudentsIds=[];
     
    
 
@@ -72,12 +73,7 @@ export class GetStudentsComponent implements OnInit {
 
    if(this.StudentsIds.filter(x=>x.Id===id)){
      this.removeStudent(id);}
-   else if(this.StudentsIds.filter(x=>x.Id!==id))
-  {
-    this.StudentsIds.map(this.StudentsIds=Student[id]);
-
-  }
-
+   
 
   
 

@@ -1,8 +1,8 @@
 
 
 export interface Employee {
- FirtName: string;
- LastName: string;
- JobTitle: string;
+ Admin: string;
+ Instructor: string;
+ facility: string;
 
 }
