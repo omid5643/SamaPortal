@@ -1,9 +1,9 @@
 import { Entity } from "./etity";
 
 import { Address } from "./address";
-export class Employee 
-extends Entity
- {
+import { employeeType } from "../interfaces/employee";
+export class Employee
+    extends Entity {
 
     FirstName: string;
 
@@ -16,8 +16,8 @@ extends Entity
 
     Address: Address;
     PhoneNumbers: string[];
-   EmployeeType:Employee;
-   CreateDate: Date;
+    EmployeeType:string;
+    CreateDate: Date;
     CreateBy: string;
 
     constructor() {

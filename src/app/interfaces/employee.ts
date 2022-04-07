@@ -1,8 +1,8 @@
 
 
-export interface Employee {
- Admin: string;
- Instructor: string;
- facility: string;
+export enum employeeType{
+ Admin,
+ Instructor,
+ facility,
 
 }
