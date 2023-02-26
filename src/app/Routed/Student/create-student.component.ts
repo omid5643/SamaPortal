@@ -22,6 +22,7 @@ export class CreateStudentComponent implements OnInit {
   ngOnInit() {
   }
   createStudent() {
+    
    // var test=this.studentPhoneNumber;
   // this.student.PhoneNumbers=[];
     //this.student.PhoneNumbers[0]=this.studentPhoneNumber;
