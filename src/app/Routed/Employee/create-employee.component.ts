@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Employee } from "../../models/employee";
 import { EmployeeService } from "./employee-service";
 import { ModalService } from '../../services/modal-service';
+import { employeeType } from "../../Enums/EmployeeType";
 
 
 @Component({
@@ -13,8 +14,8 @@ import { ModalService } from '../../services/modal-service';
   export class CreateEmployeeComponent implements OnInit{
 
     employee:Employee;
-    employeeTypes:string[]=["Admin","Instructor","Faciliy"];
-    employeeType:string;
+    employeeTypes:employeeType[]=[employeeType.Admin,employeeType.Instructor,employeeType.Facility];
+    employeeType:employeeType;
 
 constructor(private employeeService:EmployeeService,private moduleService:ModalService){
 

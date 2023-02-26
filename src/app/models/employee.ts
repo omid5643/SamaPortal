@@ -1,7 +1,7 @@
 import { Entity } from "./etity";
 
 import { Address } from "./address";
-import { employeeType } from "../interfaces/employee";
+import { employeeType } from "../Enums/EmployeeType";
 export class Employee
     extends Entity {
 
@@ -16,7 +16,7 @@ export class Employee
 
     Address: Address;
     PhoneNumbers: string[];
-    EmployeeType:string;
+    EmployeeType:employeeType;
     CreateDate: Date;
     CreateBy: string;
 
